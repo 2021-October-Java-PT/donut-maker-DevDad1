@@ -1,3 +1,20 @@
+import Donut from './donut';
+
+describe('Donut',  () => {
+
+    test('does it return a click', () => {
+       const underTest = new Donut(0); 
+    });
+
+
+
+
+    
+});
+//
+//
+//
+//
 //Feature 1
 // Can add to donut count.
 // Can retrieve a donut count.

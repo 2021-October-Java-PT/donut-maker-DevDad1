@@ -7,25 +7,38 @@
     <title>Donut Clicker</title>
   </head>
   <body>
-    <!-- Create a Header section
-Contains a navigation menu that when clicked will expand sections about:
+    <div class="container">
+      <h1>
+        Fred the Baker Company
+        <nav id="navDropdown" class="dropDownContent">
+          <a href="#">Fred the Baking Company</a>
+          <a href="#">Inspiration</a>
+          <a href="#">Contact</a>
+        </nav>
+      </h1>
+     
+      <main>
+        <section id="scoreKeeper">
+        <button id="click">Click to make Donuts</button>
+        <p id="donutCount">Donuts Made: <div class="number">0
+        </div>
+      </p>
+    </section>
+    <section id="autoClick">
+      <button id="autoClickPurchase">Click to purchase an Autoclicker</button>
+      <p id="autoClickerCount">Autoclickers: <div class="number">0
 
-Fred the Baker Baking Company
-The inspiration for this game, Cookie Clicker
-Your contact info -->
-    <div class="container"></div>
-    <!-- Create a Main section that contains:
-    A section that handles a click
-    Contains a button that can be clicked to make donuts.
-    Displays the amount of Donuts made.
-    A section that interacts with the AutoClicker
-    Displays the amount of Auto Clickers purchased.
-    Provides a button to purchase Auto Clickers.
-    Button is disabled when you do not have enough Donuts to buy an Auto Clicker.
-    A section that interacts with the ClickMultiplier
-    Displays the amount of Donut Multipliers purchased.
-    Provides a button to purchase Donut Multiplier.
-    Button is disabled when you do not have enough Donuts to buy a Donut Multiplier. -->
+      </div>
+    </p>
+    </section>
+    <section id="multiplier">
+      <button id="multiplierPurchase">Click to purchase a Multiplier</button>
+    </section>
+    <p id="multiplierCount">Multipliers: <div class="number">0</div></p>
+
+       
+      </main>
+    </div>
 
     <script src="./index.js"></script>
   </body>
