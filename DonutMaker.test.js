@@ -1,15 +1,11 @@
-import Donut from './donut';
+import Donut from "./index.js";
 
-describe('Donut',  () => {
-
-    test('does it return a click', () => {
-       const underTest = new Donut(0); 
-    });
-
-
-
-
-    
+describe("Donut", () => {
+  test("does it return a click", () => {
+    let underTest = new Donut(0);
+    underTest.click();
+    expect(underTest.count)toMatch()
+  });
 });
 //
 //
