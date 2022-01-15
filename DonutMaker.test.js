@@ -1,10 +1,15 @@
 import Donut from "./index.js";
 
 describe("Donut", () => {
+  test("does it return a count", () => {
+    const underTest = new Donut(2);
+    expect(typeof underTest.count).toMatch("number");
+  });
+
   test("does it return a click", () => {
-    let underTest = new Donut(0);
+    const underTest = new Donut(0);
     underTest.click();
-    expect(underTest.count)toMatch()
+    expect(underTest.count).toEqual(1);
   });
 });
 //
