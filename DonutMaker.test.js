@@ -29,6 +29,29 @@ describe("Donut", () => {
     expect(underTest.autoClickerCount).toEqual(1);
     expect(underTest.donutCount).toEqual(0);
   });
+
+  test("does it remove 110 donuts, and add an autoClicker", () => {
+    const underTest = new Donut(110, 1);
+    underTest.purchaseAutoClicker();
+    expect(underTest.autoClickerCount).toEqual(2);
+    expect(underTest.donutCount).toEqual(0);
+  });
+
+  test("does it remove 121 donuts, and add an autoClicker", () => {
+    const underTest = new Donut(121, 2);
+    underTest.purchaseAutoClicker();
+    expect(underTest.autoClickerCount).toEqual(3);
+    expect(underTest.donutCount).toEqual(0);
+  });
+  
+  test("does it remove 133 donuts, and add an autoClicker", () => {
+    const underTest = new Donut(133, 3);
+    underTest.purchaseAutoClicker();
+    expect(underTest.autoClickerCount).toEqual(4);
+    expect(underTest.donutCount).toEqual(0);
+  });
+  
+  
 });
 //
 //

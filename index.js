@@ -37,12 +37,23 @@ class Donut {
       this.donutCount += 1; 
   }
   
+  
+    
+  
   purchaseAutoClicker() {
-    this.autoClickerCount +=1;
+    if (this.autoClickerCount === 0) { 
     this.donutCount -=100;
+    } else if(this.autoClickerCount === 1){
+     this.donutCount -=110;
+    } else if(this.autoClickerCount === 2){
+      this.donutCount -= 121;
+    } else{
+      this.donutCount -= 133;
+    }
+    this.autoClickerCount +=1;
   }
   
-  
+
   
       
   }
