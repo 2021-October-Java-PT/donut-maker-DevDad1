@@ -63,6 +63,24 @@ describe("Donut", () => {
     underTest.enableAutoClickers();
     expect(underTest.donutCount).toEqual(103);
   });
+
+  test("does it return a clickMultiplierCount", () => {
+    const underTest = new Donut(100, 2, 2);
+    expect(typeof underTest.clickMultiplierCount).toMatch("number");
+  });
+
+  test("does it add an clickMultiplierCount", () => {
+    const underTest = new Donut(10, 0, 0);
+    underTest.purchaseClickMultiplier();
+    expect(underTest.clickMultiplierCount).toEqual(1);
+  });
+
+  test("does it remove 10 donuts, and add an clickMultiplierCount", () => {
+    const underTest = new Donut(10, 0, 0);
+    underTest.purchaseClickMultiplier();
+    expect(underTest.clickMultiplierCount).toEqual(1);
+    expect(underTest.donutCount).toEqual(0);
+  });
 });
 //
 //

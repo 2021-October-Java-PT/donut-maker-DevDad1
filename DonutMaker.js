@@ -28,9 +28,10 @@
 
 class Donut {
     
-  constructor(donutCount, autoClickerCount) {
+  constructor(donutCount, autoClickerCount, clickMultiplierCount) {
       this.donutCount = donutCount;
       this.autoClickerCount = autoClickerCount;
+      this.clickMultiplierCount = clickMultiplierCount;
   }
   
   click() {
@@ -57,6 +58,12 @@ class Donut {
 
 enableAutoClickers() {
   this.donutCount += (this.autoClickerCount) * 1;
+}
+
+purchaseClickMultiplier() {
+  this.clickMultiplierCount += 1;
+  this.donutCount -= 10;
+  
 }
   
       
