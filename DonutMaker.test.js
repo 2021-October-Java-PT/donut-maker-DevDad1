@@ -1,15 +1,33 @@
 import Donut from "./index.js";
 
 describe("Donut", () => {
-  test("does it return a count", () => {
+  test("does it return a donutCount", () => {
     const underTest = new Donut(2);
-    expect(typeof underTest.count).toMatch("number");
+    expect(typeof underTest.donutCount).toMatch("number");
   });
 
   test("does it return a click", () => {
     const underTest = new Donut(0);
     underTest.click();
-    expect(underTest.count).toEqual(1);
+    expect(underTest.donutCount).toEqual(1);
+  });
+
+  test("does it return a autoClickerCount", () => {
+    const underTest = new Donut(2, 2);
+    expect(typeof underTest.autoClickerCount).toMatch("number");
+  });
+
+  test("does it add an autoClicker", () => {
+    const underTest = new Donut(0, 0);
+    underTest.purchaseAutoClicker();
+    expect(underTest.autoClickerCount).toEqual(1);
+  });
+
+  test("does it remove 100 donuts, and add an autoClicker", () => {
+    const underTest = new Donut(100, 0);
+    underTest.purchaseAutoClicker();
+    expect(underTest.autoClickerCount).toEqual(1);
+    expect(underTest.donutCount).toEqual(0);
   });
 });
 //

@@ -28,13 +28,18 @@
 
 class Donut {
     
-  constructor(count) {
-      this.count = count;
+  constructor(donutCount, autoClickerCount) {
+      this.donutCount = donutCount;
+      this.autoClickerCount = autoClickerCount;
   }
   
   click() {
-      this.count += 1;
-      
+      this.donutCount += 1; 
+  }
+  
+  purchaseAutoClicker() {
+    this.autoClickerCount +=1;
+    this.donutCount -=100;
   }
   
   
