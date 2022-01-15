@@ -5,9 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Donut Clicker</title>
+    <link rel="stylesheet" href="/style.css">
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <h1>
+        Fred the Baker Company
+        <nav id="navDropdown" class="dropDownContent">
+          <button class="btn" id="modalBtn">
+            Fred the Baking Company
+          </button>
+          <div class="modal" id="myModal">
+            <div class="modal-content">
+              <span class="close">&times;
+              </span>
+              <p>
+                Instert About Fred
+              </p>
+            </div>
+          </div>
+          <button class="btn" id="modalBtn">Inspiration
+          </button>
+          <div class="modal" id="myModal">
+            <div class="modal-content">
+              <span class="close">&times;</span>
+            <p>
+              Insert Inspiration
+            </p>
+          </div>
+        </div>
+          <button class="btn" id="modalBtn">
+            Contact
+          </button>
+          <div class="modal" id="myModal">
+            <div class="modal-content">
+              <span class="close">&times;
+              </span>
+              <p>insert contact</p>
+            </div>
+          </div>
+        </nav>
+      </h1>
+     
+      <main>
+        <section id="scoreKeeper">
+        <button id="click">Click to make Donuts</button>
+        <p id="donutCount">Donuts Made: <div class="number">0
+        </div>
+      </p>
+    </section>
+    <section id="autoClick">
+      <button id="autoClickPurchase">Click to purchase an Autoclicker</button>
+      <p id="autoClickerCount">Autoclickers: <div class="number">0
+
+      </div>
+    </p>
+    </section>
+    <section id="multiplier">
+      <button id="multiplierPurchase">Click to purchase a Multiplier</button>
+    </section>
+    <p id="multiplierCount">Multipliers: <div class="number">0</div></p>
+
+       
+      </main>
+    </div>
+
     <script src="./index.js"></script>
   </body>
 </html>
