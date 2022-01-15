@@ -18,7 +18,7 @@ describe("Donut", () => {
   });
 
   test("does it add an autoClicker", () => {
-    const underTest = new Donut(0, 0);
+    const underTest = new Donut(100, 0);
     underTest.purchaseAutoClicker();
     expect(underTest.autoClickerCount).toEqual(1);
   });
@@ -51,7 +51,12 @@ describe("Donut", () => {
     expect(underTest.donutCount).toEqual(0);
   });
   
-  
+  test("should not allow you to buy an autoClicker if you dont have enough donuts", () => {
+    const underTest = new Donut(99, 0);
+    underTest.purchaseAutoClicker();
+    expect(underTest.autoClickerCount).toEqual(0);
+    expect(underTest.donutCount).toEqual(99);
+  });
 });
 //
 //

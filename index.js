@@ -41,18 +41,19 @@ class Donut {
     
   
   purchaseAutoClicker() {
-    if (this.autoClickerCount === 0) { 
+   if (this.donutCount >= 100){    
+     if (this.autoClickerCount === 0 && this.donutCount >= 100) { 
     this.donutCount -=100;
-    } else if(this.autoClickerCount === 1){
+    } else if(this.autoClickerCount === 1 && this.donutCount >= 110){
      this.donutCount -=110;
-    } else if(this.autoClickerCount === 2){
+    } else if(this.autoClickerCount === 2 && this.donutCount >= 121){
       this.donutCount -= 121;
-    } else{
+    } else if(this.autoClickerCount >= 3 && this.donutCount >=133){
       this.donutCount -= 133;
     }
     this.autoClickerCount +=1;
-  }
-  
+   }
+} 
 
   
       
