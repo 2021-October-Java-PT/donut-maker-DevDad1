@@ -1,4 +1,4 @@
-import Donut from "./index.js";
+import Donut from "./DonutMaker.js";
 
 describe("Donut", () => {
   test("does it return a donutCount", () => {
@@ -43,19 +43,25 @@ describe("Donut", () => {
     expect(underTest.autoClickerCount).toEqual(3);
     expect(underTest.donutCount).toEqual(0);
   });
-  
+
   test("does it remove 133 donuts, and add an autoClicker", () => {
     const underTest = new Donut(133, 3);
     underTest.purchaseAutoClicker();
     expect(underTest.autoClickerCount).toEqual(4);
     expect(underTest.donutCount).toEqual(0);
   });
-  
+
   test("should not allow you to buy an autoClicker if you dont have enough donuts", () => {
     const underTest = new Donut(99, 0);
     underTest.purchaseAutoClicker();
     expect(underTest.autoClickerCount).toEqual(0);
     expect(underTest.donutCount).toEqual(99);
+  });
+
+  test("should enable autoClickers", () => {
+    const underTest = new Donut(100, 3);
+    underTest.enableAutoClickers();
+    expect(underTest.donutCount).toEqual(103);
   });
 });
 //
