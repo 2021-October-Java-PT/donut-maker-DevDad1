@@ -7,7 +7,7 @@ describe("Donut", () => {
   });
 
   test("does it return a click", () => {
-    const underTest = new Donut(0);
+    const underTest = new Donut(0,0,0,0);
     underTest.click();
     expect(underTest.donutCount).toEqual(1);
   });
@@ -59,7 +59,7 @@ describe("Donut", () => {
   });
 
   test("should enable autoClickers", () => {
-    const underTest = new Donut(100, 3);
+    const underTest = new Donut(100, 3,0,0);
     underTest.enableAutoClickers();
     expect(underTest.donutCount).toEqual(103);
   });
@@ -102,4 +102,31 @@ describe("Donut", () => {
     expect(underTest.clickMultiplierCount).toEqual(3);
     expect(underTest.donutCount).toEqual(0.8999999999999986);
   });
+
+  test("clickMultiplierCount should not go up if there is not enough donuts", () => {
+    const underTest = new Donut(9, 0, 0, 0);
+    underTest.purchaseClickMultiplier();
+    expect(underTest.clickMultiplierCount).toEqual(0);
+  });
+
+  test("with 1 multiplier the count should increase by 1.2 times click", () => {
+    const underTest = new Donut(0, 0, 1, 0);
+    underTest.click();
+    expect(underTest.donutCount).toEqual(1.2);
+  });
+
+  test("with 3 multiplier the count should increase by 1.728 times click", () => {
+    const underTest = new Donut(15, 0, 2, 11);
+    underTest.purchaseClickMultiplier();
+    underTest.click();
+    expect(underTest.donutCount).toEqual(4.627999999999998);
+  });
+
+  test("should enable autoClickers and use multipliers", () => {
+    const underTest = new Donut(100, 3,3,0);
+    underTest.enableAutoClickers();
+    expect(underTest.donutCount).toEqual(105.184);
+  });
+
+
 });
