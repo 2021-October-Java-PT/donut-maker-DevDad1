@@ -11,65 +11,64 @@
     <div class="container">
       <h1>
         Fred the Baker Company
-        <nav id="navDropdown" class="dropDownContent">
-          <button class="btn" id="modalBtn">
-            Fred the Baking Company
-          </button>
-          <div class="modal" id="myModal">
-            <div class="modal-content">
-              <span class="close">&times;
-              </span>
-              <p>
-                Instert About Fred
-              </p>
+        <nav id="main">    
+          <button class="modal-button" href="#myModal1">Fred the Baking Company</button>
+            <div id="myModal1" class="modal">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <span class="close">×</span>
+                  <h2>Fred the Baking Company</h2>
+                </div>
+                <div class="modal-body">
+                  <p>Fred is nearing retirement. To add to his legacy, he wants to be remembered for his desire to make a donut for everyone. To accomplish this, he had this game created so you can continue to make donuts. </p>
+                </div>
+                <div class="modal-footer">
+                   <h3>Thank You!!</h3>
+                </div>
+              </div>
             </div>
-          </div>
-          <button class="btn" id="modalBtn">Inspiration
-          </button>
-          <div class="modal" id="myModal">
+          <a href="https://orteil.dashnet.org/cookieclicker/" target="blank"><button class="btn" id="modalBtn">Insperation
+          </button></a>
+          <button class="modal-button" href="#myModal2">About the Developer</button>
+          <div id="myModal2" class="modal">
             <div class="modal-content">
-              <span class="close">&times;</span>
-            <p>
-              Insert Inspiration
-            </p>
-          </div>
-        </div>
-          <button class="btn" id="modalBtn">
-            Contact
-          </button>
-          <div class="modal" id="myModal">
-            <div class="modal-content">
-              <span class="close">&times;
-              </span>
-              <p>insert contact</p>
+              <div class="modal-header">
+                <span class="close">×</span>
+                <h2>About Ryan Webster</h2>
+              </div>
+              <div class="modal-body">
+                <p>In 2021 I decided to transition out of a job that had no opportunity for advancement. In deciding what direction I was going to take, I rediscovered my passion for creating with software and found We Can Code IT software development bootcamp. I learned a lot before attending the bootcamp, and a great deal more from the bootcamp itself. I feel that my previous management and problem solving experience will be an asset in my career as a software developer.</p>
+              </div>
+              <div class="modal-footer">
+                <a href="https://devdad1.github.io/" target="blank"><h3>Learn More</h3></a>
+              </div>
             </div>
           </div>
         </nav>
       </h1>
-     
       <main>
-        <section id="scoreKeeper">
-        <button id="click">Click to make Donuts</button>
-        <p id="donutCount">Donuts Made: <div class="number">0
-        </div>
-      </p>
-    </section>
-    <section id="autoClick">
-      <button id="autoClickPurchase">Click to purchase an Autoclicker</button>
-      <p id="autoClickerCount">Autoclickers: <div class="number">0
-
-      </div>
-    </p>
-    </section>
-    <section id="multiplier">
-      <button id="multiplierPurchase">Click to purchase a Multiplier</button>
-    </section>
-    <p id="multiplierCount">Multipliers: <div class="number">0</div></p>
-
-       
+        <section id="donutMaker">
+          <button id="click">Click to make donuts</button>
+          <p id="donutCount">Donuts Made: 
+            <div class="number">0
+            </div>
+          </p>
+        </section>
+        <section id="autoClick">
+          <button id="autoClickPurchase">Click to purchase an Autoclicker</button>
+            <p id="autoClickerCount">Autoclickers: 
+              <div class="number">0
+              </div>
+            </p>
+        </section>
+        <section id="multiplier">
+          <button id="multiplierPurchase">Click to purchase a Multiplier</button>
+          <p id="multiplierCount">Multipliers: 
+            <div class="number">0</div>
+          </p>
+        </section>
       </main>
     </div>
-
-    <script src="./DonutMaker.js"></script>
+    <script src="./donut-maker-app.js"></script>
   </body>
 </html>
