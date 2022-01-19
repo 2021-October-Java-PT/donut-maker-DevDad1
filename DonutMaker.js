@@ -4,12 +4,16 @@ class Donut {
     donutCount,
     autoClickerCount,
     clickMultiplierCount,
-    clickMultiplierVar
+    clickMultiplierVar,
+    autoClickerVar,
+    clickIncrease
   ) {
     this.donutCount = donutCount;
     this.autoClickerCount = autoClickerCount;
     this.clickMultiplierCount = clickMultiplierCount;
     this.clickMultiplierVar = clickMultiplierVar;
+    this.autoClickerVar = autoClickerVar;
+    this.clickIncrease = clickIncrease;
   }
 
   click() {
@@ -20,18 +24,14 @@ class Donut {
     }
   }
 
-  purchaseAutoClicker() {
-    if (this.donutCount >= 100) {
-      if (this.autoClickerCount === 0 && this.donutCount >= 100) {
-        this.donutCount -= 100;
-      } else if (this.autoClickerCount === 1 && this.donutCount >= 110) {
-        this.donutCount -= 110;
-      } else if (this.autoClickerCount === 2 && this.donutCount >= 121) {
-        this.donutCount -= 121;
-      } else if (this.autoClickerCount >= 3 && this.donutCount >= 133) {
-        this.donutCount -= 133;
+ 
+
+  purchaseAutoClicker(){
+    if (this.donutCount >= this.autoClickerVar) {
+      { this.donutCount -= this.autoClickerVar;
+        this.autoClickerVar = this.autoClickerVar * 1.1;
+        this.autoClickerCount += 1;
       }
-      this.autoClickerCount += 1;
     }
   }
 
@@ -47,18 +47,14 @@ class Donut {
   }
 
   purchaseClickMultiplier() {
-    if (this.donutCount >= 10) {
-      if (this.clickMultiplierCount === 0) {
-        this.clickMultiplierCount += 1;
-        this.donutCount -= 10;
-        this.clickMultiplierVar = 10;
-      } else {
+    if (this.donutCount >= this.clickMultiplierVar) {
+        this.donutCount -= this.clickMultiplierVar;
         this.clickMultiplierVar = this.clickMultiplierVar * 1.1;
         this.clickMultiplierCount += 1;
-        this.donutCount -= this.clickMultiplierVar;
+        this.clickIncrease = this.clickIncrease * 1.2;
       }
     }
   }
-}
+
 
 export default Donut;
