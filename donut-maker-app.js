@@ -5,6 +5,7 @@ const clicked = document.querySelector("#click");
 const donutsMade = document.querySelector("#donutCountNum");
 const multiPurchase = document.querySelector("#multiplierPurchase");
 const autoPurchase = document.querySelector("#autoClickPurchase");
+const multiNumber = document.querySelector("#multiNumber");
 var btn = document.querySelectorAll("button.modal-button");
 
 var modals = document.querySelectorAll(".modal");
@@ -69,6 +70,19 @@ clicked.addEventListener("click", () => {
   clickValue.innerText = donut.clickIncrease;
   greyAuto();
   greyMulti();
+});
+
+multiPurchase.addEventListener("click", () => {
+  donut.purchaseClickMultiplier();
+  multiNumber.innerText = donut.clickMultiplierCount;
+  clickValue.innerText = donut.clickIncrease;
+  donutsMade.innerText = donut.donutCount;
+});
+
+autoPurchase.addEventListener("click", () => {
+  donut.purchaseAutoClicker();
+  autoNumber.innerText = donut.autoClickerCount;
+  donutsMade.innerText = donut.donutCount;
 });
 
 
