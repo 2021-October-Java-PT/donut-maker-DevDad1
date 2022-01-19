@@ -6,6 +6,8 @@ const donutsMade = document.querySelector("#donutCountNum");
 const multiPurchase = document.querySelector("#multiplierPurchase");
 const autoPurchase = document.querySelector("#autoClickPurchase");
 const multiNumber = document.querySelector("#multiNumber");
+const multiPurchaseAmt = document.querySelector("#multiPurchaseAmt");
+const autoPurchaseAmt = document.querySelector("#autoPurchaseAmt");
 var btn = document.querySelectorAll("button.modal-button");
 
 var modals = document.querySelectorAll(".modal");
@@ -19,6 +21,7 @@ renderPage();
 function renderPage() {
   greyMulti();
   greyAuto();
+  update();
 }
 
 function greyMulti(){
@@ -35,6 +38,18 @@ function greyAuto(){
   } else {
     autoPurchase.style.color = "black"
   }
+  }
+
+  function update(){
+    autoNumber.innerText = donut.autoClickerCount;
+    multiNumber.innerText = donut.clickMultiplierCount;
+    clickValue.innerText = donut.clickIncrease;
+    donutsMade.innerText = donut.donutCount;
+    autoPurchaseAmt.innerText = donut.autoClickerVar;
+    multiPurchaseAmt.innerText = donut.clickMultiplierVar;
+    
+    greyAuto();
+    greyMulti();
   }
 
 for (var i = 0; i < btn.length; i++) {
@@ -66,23 +81,17 @@ window.onclick = function (event) {
 
 clicked.addEventListener("click", () => {
   donut.click();
-  donutsMade.innerText = donut.donutCount;
-  clickValue.innerText = donut.clickIncrease;
-  greyAuto();
-  greyMulti();
+  update();
 });
 
 multiPurchase.addEventListener("click", () => {
   donut.purchaseClickMultiplier();
-  multiNumber.innerText = donut.clickMultiplierCount;
-  clickValue.innerText = donut.clickIncrease;
-  donutsMade.innerText = donut.donutCount;
+  update();
 });
 
 autoPurchase.addEventListener("click", () => {
   donut.purchaseAutoClicker();
-  autoNumber.innerText = donut.autoClickerCount;
-  donutsMade.innerText = donut.donutCount;
+  update();
 });
 
 
