@@ -12,7 +12,7 @@
       <h1>
         Fred the Baker Company
         <nav id="main">    
-          <button class="modal-button" href="#myModal1">Fred the Baking Company</button>
+          <button class="modal-button" href="#myModal">Fred the Baking Company</button>
             <div id="myModal1" class="modal">
               <div class="modal-content">
                 <div class="modal-header">
@@ -29,7 +29,7 @@
             </div>
           <a href="https://orteil.dashnet.org/cookieclicker/" target="blank"><button class="btn" id="modalBtn">Insperation
           </button></a>
-          <button class="modal-button" href="#myModal2">About the Developer</button>
+          <button class="modal-button" href="#myModal">About the Developer</button>
           <div id="myModal2" class="modal">
             <div class="modal-content">
               <div class="modal-header">
@@ -48,23 +48,23 @@
       </h1>
       <main>
         <section id="donutMaker">
-          <button id="click">Click to make donuts</button>
+          <button id="click">Click to make<p id="click-value"></p> donuts</button>
           <p id="donutCount">Donuts Made: 
-            <div class="number">0
+            <div id="donutCountNum" class="number">0
             </div>
           </p>
         </section>
         <section id="autoClick">
-          <button id="autoClickPurchase">Click to purchase an Autoclicker</button>
+          <button  id="autoClickPurchase">Click to purchase an Autoclicker for <p id="autoPurchaseAmt"></p> Donuts</button>
             <p id="autoClickerCount">Autoclickers: 
-              <div class="number">0
+              <div id="autoNumber">0
               </div>
             </p>
         </section>
         <section id="multiplier">
-          <button id="multiplierPurchase">Click to purchase a Multiplier</button>
+          <button  id="multiplierPurchase">Click to purchase a Multiplier for <p id=multiPurchaseAmt></p> Donuts</button>
           <p id="multiplierCount">Multipliers: 
-            <div class="number">0</div>
+            <div id="multiNumber">0</div>
           </p>
         </section>
       </main>
