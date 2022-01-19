@@ -1,21 +1,21 @@
 import Donut from "./DonutMaker.js";
 
-const clickValue = document.querySelector("#click-value");
-const clicked = document.querySelector("#click");
-const donutsMade = document.querySelector("#donutCountNum");
-const multiPurchase = document.querySelector("#multiplierPurchase");
+const autoNumber = document.querySelector("#autoNumber");
 const autoPurchase = document.querySelector("#autoClickPurchase");
-const multiNumber = document.querySelector("#multiNumber");
-const multiPurchaseAmt = document.querySelector("#multiPurchaseAmt");
 const autoPurchaseAmt = document.querySelector("#autoPurchaseAmt");
+const clicked = document.querySelector("#click");
+const clickValue = document.querySelector("#click-value");
+const donutsMade = document.querySelector("#donutCountNum");
+const multiNumber = document.querySelector("#multiNumber");
+const multiPurchase = document.querySelector("#multiplierPurchase");
+const multiPurchaseAmt = document.querySelector("#multiPurchaseAmt");
+const reset = document.querySelector("#reset");
+
 var btn = document.querySelectorAll("button.modal-button");
-
 var modals = document.querySelectorAll(".modal");
-
 var spans = document.getElementsByClassName("close");
 
 const donut = new Donut(0, 0, 0, 10, 100, 1);
-
 renderPage();
 
 function renderPage() {
@@ -24,33 +24,39 @@ function renderPage() {
   update();
 }
 
-function greyMulti(){
-if (donut.donutCount <= donut.clickMultiplierVar) {
-  multiPurchase.style.color = "grey" 
-} else {
-  multiPurchase.style.color = "black"
-}
-}
+setInterval(() => {
+  donut.enableAutoClickers();
+  update();
+}, 1000);
 
-function greyAuto(){
-  if (donut.donutCount <= donut.autoClickerVar) {
-    autoPurchase.style.color = "grey" 
+function greyMulti() {
+  if (donut.donutCount <= donut.clickMultiplierVar) {
+    multiPurchase.style.color = "grey";
   } else {
-    autoPurchase.style.color = "black"
+    multiPurchase.style.color = "black";
   }
-  }
+}
 
-  function update(){
-    autoNumber.innerText = donut.autoClickerCount;
-    multiNumber.innerText = donut.clickMultiplierCount;
-    clickValue.innerText = donut.clickIncrease;
-    donutsMade.innerText = donut.donutCount;
-    autoPurchaseAmt.innerText = donut.autoClickerVar;
-    multiPurchaseAmt.innerText = donut.clickMultiplierVar;
-    
-    greyAuto();
-    greyMulti();
+function greyAuto() {
+  if (donut.donutCount <= donut.autoClickerVar) {
+    autoPurchase.style.color = "grey";
+  } else {
+    autoPurchase.style.color = "black";
   }
+}
+
+function update() {
+  autoNumber.innerText = donut.autoClickerCount;
+  multiNumber.innerText = donut.clickMultiplierCount;
+  clickValue.innerText = donut.clickIncrease;
+  donutsMade.innerText = donut.donutCount;
+  autoPurchaseAmt.innerText = donut.autoClickerVar;
+  multiPurchaseAmt.innerText = donut.clickMultiplierVar;
+
+  greyAuto();
+  greyMulti();
+}
+
 
 for (var i = 0; i < btn.length; i++) {
   btn[i].onclick = function (e) {
@@ -94,6 +100,6 @@ autoPurchase.addEventListener("click", () => {
   update();
 });
 
-
-
-
+reset.addEventListener("click", () => {
+  donut.reset();
+});

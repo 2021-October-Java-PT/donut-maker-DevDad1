@@ -37,7 +37,6 @@ class Donut {
 
   enableAutoClickers() {
     if (this.autoClickerCount === 0) {
-      console.log("no auto clickers available");
     } else if (this.clickMultiplierCount === 0 && this.autoClickerCount >= 1) {
       this.donutCount += this.autoClickerCount * 1;
     } else {
@@ -54,7 +53,19 @@ class Donut {
         this.clickIncrease = this.clickIncrease * 1.2;
       }
     }
+
+    reset() {
+      this.donutCount = 0;
+      this.autoClickerCount = 0;
+      this.clickMultiplierCount = 0;
+      this.clickMultiplierVar = 10;
+      this.autoClickerVar = 100;
+      this.clickIncrease = 1;
+    }
+    
   }
+
+ 
 
 
 export default Donut;
