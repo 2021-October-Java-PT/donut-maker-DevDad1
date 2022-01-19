@@ -1,8 +1,20 @@
+import Donut from "./DonutMaker.js";
+
+const clickValue = document.querySelector("#click-value");
+const clicked = document.querySelector("#click");
+const donutsMade = document.querySelector("#donutCountNum");
+
 var btn = document.querySelectorAll("button.modal-button");
 
 var modals = document.querySelectorAll(".modal");
 
 var spans = document.getElementsByClassName("close");
+
+const donut = new Donut(0, 0, 0, 0);
+
+renderPage();
+
+function renderPage() {}
 
 for (var i = 0; i < btn.length; i++) {
   btn[i].onclick = function (e) {
@@ -29,3 +41,10 @@ window.onclick = function (event) {
     }
   }
 };
+
+clicked.addEventListener("click", () => {
+  donut.click();
+  donutsMade.innerText = donut.donutCount;
+});
+
+clickValue.innerText = donut.clickMultiplierVar;

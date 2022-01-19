@@ -1,4 +1,5 @@
 class Donut {
+  
   constructor(
     donutCount,
     autoClickerCount,
