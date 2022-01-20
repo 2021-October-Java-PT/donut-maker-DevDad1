@@ -1,8 +1,8 @@
 import Donut from "./DonutMaker.js";
 
-var btn = document.querySelectorAll("button.modal-button");
-var modals = document.querySelectorAll(".modal");
-var spans = document.getElementsByClassName("close");
+var modal = document.getElementsByClassName('modal');
+var btn = document.getElementsByClassName("myBtn");
+var span = document.getElementsByClassName("close");
 
 const autoNumber = document.querySelector("#autoNumber");
 const autoPurchase = document.querySelector("#autoClickPurchase");
@@ -77,28 +77,24 @@ reset.addEventListener("click", () => {
   donut.reset();
 });
 
-for (var i = 0; i < btn.length; i++) {
-  btn[i].onclick = function (e) {
-    e.preventDefault();
-    modal = document.querySelector(e.target.getAttribute("href"));
-    modal.style.display = "block";
-  };
+btn[0].onclick = function() {
+    modal[0].style.display = "block";
 }
 
-for (var i = 0; i < spans.length; i++) {
-  spans[i].onclick = function () {
-    for (var index in modals) {
-      if (typeof modals[index].style !== "undefined")
-        modals[index].style.display = "none";
-    }
-  };
+btn[1].onclick = function() {
+    modal[1].style.display = "block";
 }
 
-window.onclick = function (event) {
-  if (event.target.classList.contains("modal")) {
-    for (var index in modals) {
-      if (typeof modals[index].style !== "undefined")
-        modals[index].style.display = "none";
+span[0].onclick = function() {
+    modal[0].style.display = "none";
+}
+
+span[1].onclick = function() {
+    modal[1].style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
-  }
-};
+}
