@@ -9,6 +9,7 @@ const autoPurchase = document.querySelector("#autoClickPurchase");
 const autoPurchaseAmt = document.querySelector("#autoPurchaseAmt");
 const clicked = document.querySelector("#click");
 const clickValue = document.querySelector("#click-value");
+const donuts = document.querySelector("#donuts");
 const donutsMade = document.querySelector("#donutCountNum");
 const multiNumber = document.querySelector("#multiNumber");
 const multiPurchase = document.querySelector("#multiplierPurchase");
@@ -20,8 +21,9 @@ const donut = new Donut(0, 0, 0, 10, 100, 1);
 renderPage();
 
 function renderPage() {
-  greyMulti();
+  checkDonut();
   greyAuto();
+  greyMulti();
   update();
 }
 
@@ -30,11 +32,11 @@ setInterval(() => {
   update();
 }, 1000);
 
-function greyMulti() {
-  if (donut.donutCount <= donut.clickMultiplierVar) {
-    multiPurchase.style.color = "grey";
+function checkDonut() {
+  if (donut.clickIncrease <= 1){
+    donuts.innerText = 'donut';
   } else {
-    multiPurchase.style.color = "black";
+    donuts.innerText = "donuts"
   }
 }
 
@@ -46,17 +48,31 @@ function greyAuto() {
   }
 }
 
-function update() {
-  autoNumber.innerText = donut.autoClickerCount;
-  multiNumber.innerText = donut.clickMultiplierCount;
-  clickValue.innerText = donut.clickIncrease;
-  donutsMade.innerText = donut.donutCount;
-  autoPurchaseAmt.innerText = donut.autoClickerVar;
-  multiPurchaseAmt.innerText = donut.clickMultiplierVar;
+function greyMulti() {
+  if (donut.donutCount <= donut.clickMultiplierVar) {
+    multiPurchase.style.color = "grey";
+  } else {
+    multiPurchase.style.color = "black";
+  }
+}
 
+function update() {
+  autoNumber.innerText = donut.autoClickerCount.toFixed(2);
+  multiNumber.innerText = donut.clickMultiplierCount.toFixed(2);
+  clickValue.innerText = donut.clickIncrease.toFixed(2);
+  donutsMade.innerText = donut.donutCount.toFixed(2);
+  autoPurchaseAmt.innerText = donut.autoClickerVar.toFixed(2);
+  multiPurchaseAmt.innerText = donut.clickMultiplierVar.toFixed(2);
+  
+  checkDonut();
   greyAuto();
   greyMulti();
 }
+
+autoPurchase.addEventListener("click", () => {
+  donut.purchaseAutoClicker();
+  update();
+});
 
 clicked.addEventListener("click", () => {
   donut.click();
@@ -65,11 +81,6 @@ clicked.addEventListener("click", () => {
 
 multiPurchase.addEventListener("click", () => {
   donut.purchaseClickMultiplier();
-  update();
-});
-
-autoPurchase.addEventListener("click", () => {
-  donut.purchaseAutoClicker();
   update();
 });
 
