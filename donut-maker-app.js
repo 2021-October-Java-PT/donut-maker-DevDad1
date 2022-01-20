@@ -1,5 +1,9 @@
 import Donut from "./DonutMaker.js";
 
+var btn = document.querySelectorAll("button.modal-button");
+var modals = document.querySelectorAll(".modal");
+var spans = document.getElementsByClassName("close");
+
 const autoNumber = document.querySelector("#autoNumber");
 const autoPurchase = document.querySelector("#autoClickPurchase");
 const autoPurchaseAmt = document.querySelector("#autoPurchaseAmt");
@@ -11,11 +15,8 @@ const multiPurchase = document.querySelector("#multiplierPurchase");
 const multiPurchaseAmt = document.querySelector("#multiPurchaseAmt");
 const reset = document.querySelector("#reset");
 
-var btn = document.querySelectorAll("button.modal-button");
-var modals = document.querySelectorAll(".modal");
-var spans = document.getElementsByClassName("close");
-
 const donut = new Donut(0, 0, 0, 10, 100, 1);
+
 renderPage();
 
 function renderPage() {
@@ -57,6 +58,24 @@ function update() {
   greyMulti();
 }
 
+clicked.addEventListener("click", () => {
+  donut.click();
+  update();
+});
+
+multiPurchase.addEventListener("click", () => {
+  donut.purchaseClickMultiplier();
+  update();
+});
+
+autoPurchase.addEventListener("click", () => {
+  donut.purchaseAutoClicker();
+  update();
+});
+
+reset.addEventListener("click", () => {
+  donut.reset();
+});
 
 for (var i = 0; i < btn.length; i++) {
   btn[i].onclick = function (e) {
@@ -83,23 +102,3 @@ window.onclick = function (event) {
     }
   }
 };
-
-
-clicked.addEventListener("click", () => {
-  donut.click();
-  update();
-});
-
-multiPurchase.addEventListener("click", () => {
-  donut.purchaseClickMultiplier();
-  update();
-});
-
-autoPurchase.addEventListener("click", () => {
-  donut.purchaseAutoClicker();
-  update();
-});
-
-reset.addEventListener("click", () => {
-  donut.reset();
-});
