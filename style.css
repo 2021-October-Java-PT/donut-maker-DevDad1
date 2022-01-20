@@ -1,13 +1,12 @@
 body {
   background-color: rgb(131, 82, 46);
-  background-image: url("image-from-rawpixel-id-2048632-png.png");
+  background-image: url("static\image\image-from-rawpixel-id-2048632-png.png");
   background-repeat: no-repeat;
   background-position-x: center;
 }
 
 h1 {
   text-align: center;
- 
 }
 
 .modal {
@@ -22,7 +21,6 @@ h1 {
   overflow: auto;
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
-  
 }
 
 .modal-content {

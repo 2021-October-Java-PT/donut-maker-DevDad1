@@ -1,6 +1,6 @@
 import Donut from "./DonutMaker.js";
 
-var modal = document.getElementsByClassName('modal');
+var modal = document.getElementsByClassName("modal");
 var btn = document.getElementsByClassName("myBtn");
 var span = document.getElementsByClassName("close");
 
@@ -33,10 +33,10 @@ setInterval(() => {
 }, 1000);
 
 function checkDonut() {
-  if (donut.clickIncrease <= 1){
-    donuts.innerText = 'donut';
+  if (donut.clickIncrease <= 1) {
+    donuts.innerText = "donut";
   } else {
-    donuts.innerText = "donuts"
+    donuts.innerText = "donuts";
   }
 }
 
@@ -63,7 +63,7 @@ function update() {
   donutsMade.innerText = donut.donutCount.toFixed(2);
   autoPurchaseAmt.innerText = donut.autoClickerVar.toFixed(2);
   multiPurchaseAmt.innerText = donut.clickMultiplierVar.toFixed(2);
-  
+
   checkDonut();
   greyAuto();
   greyMulti();
@@ -88,24 +88,24 @@ reset.addEventListener("click", () => {
   donut.reset();
 });
 
-btn[0].onclick = function() {
-    modal[0].style.display = "block";
-}
+btn[0].onclick = function () {
+  modal[0].style.display = "block";
+};
 
-btn[1].onclick = function() {
-    modal[1].style.display = "block";
-}
+btn[1].onclick = function () {
+  modal[1].style.display = "block";
+};
 
-span[0].onclick = function() {
-    modal[0].style.display = "none";
-}
+span[0].onclick = function () {
+  modal[0].style.display = "none";
+};
 
-span[1].onclick = function() {
-    modal[1].style.display = "none";
-}
+span[1].onclick = function () {
+  modal[1].style.display = "none";
+};
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
