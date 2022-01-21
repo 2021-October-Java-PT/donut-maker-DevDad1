@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(131, 82, 46);
+  background-color: #f84b076e;
   background-image: url("static\image\image-from-rawpixel-id-2048632-png.png");
   background-repeat: no-repeat;
   background-position-x: center;
@@ -75,7 +75,7 @@ h1 {
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #e28e11;
+  background-color: #f84b076e;
   color: white;
 }
 
@@ -85,6 +85,6 @@ h1 {
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #e28e11;
+  background-color: #f84b076e;
   color: white;
 }
